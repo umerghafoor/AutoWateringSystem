@@ -1,25 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:plant_monitoring/home_elements.dart';
 
-class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+import 'comman.dart';
 
-  @override
-  Widget build(BuildContext context) {
-    if (MediaQuery.of(context).size.width < 700) {
-      return const MobileView();
-    } else if (MediaQuery.of(context).size.width < 900) {
-      return const DesktopView();
-    } else if (MediaQuery.of(context).size.width < 1000) {
-      return const DesktopViewWide();
-    } else {
-      return const DesktopViewUltraWide();
-    }
-  }
-}
-
-class MobileView extends StatelessWidget {
-  const MobileView({super.key});
+class MobileViewHome extends StatelessWidget {
+  const MobileViewHome({super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -64,8 +49,8 @@ class MobileView extends StatelessWidget {
   }
 }
 
-class DesktopView extends StatelessWidget {
-  const DesktopView({super.key});
+class DesktopViewHome extends StatelessWidget {
+  const DesktopViewHome({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -102,8 +87,8 @@ class DesktopView extends StatelessWidget {
   }
 }
 
-class DesktopViewWide extends StatelessWidget {
-  const DesktopViewWide({super.key});
+class DesktopViewWideHome extends StatelessWidget {
+  const DesktopViewWideHome({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -140,8 +125,8 @@ class DesktopViewWide extends StatelessWidget {
   }
 }
 
-class DesktopViewUltraWide extends StatelessWidget {
-  const DesktopViewUltraWide({super.key});
+class DesktopViewUltraWideHome extends StatelessWidget {
+  const DesktopViewUltraWideHome({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -150,7 +135,7 @@ class DesktopViewUltraWide extends StatelessWidget {
         title: const Text("Plant Monitoring"),
       ),
       body: Row(children: [
-        DesktopNavigationRail(),
+        const DesktopNavigationRail(),
         Expanded(child: Container()),
         const SingleChildScrollView(
           child: SizedBox(

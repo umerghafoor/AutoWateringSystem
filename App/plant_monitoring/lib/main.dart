@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:plant_monitoring/home.dart';
+import 'package:plant_monitoring/ui_controller.dart';
 
 void main() {
   runApp(const MyApp());

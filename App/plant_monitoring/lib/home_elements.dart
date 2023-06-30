@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:avatar_glow/avatar_glow.dart';
 import 'package:fl_chart/fl_chart.dart';
+import 'theme.dart';
 
 import 'controller.dart';
 
@@ -100,25 +100,26 @@ class _ButtonContainerState extends State<ButtonContainer> {
     return Row(
       children: [
         Expanded(
-            child: SliderTheme(
-          data: const SliderThemeData(
-            trackHeight: 24,
-            thumbShape:
-                RoundSliderThumbShape(enabledThumbRadius: 13, elevation: 0),
+          child: SliderTheme(
+            data: const SliderThemeData(
+              trackHeight: 24,
+              thumbShape:
+                  RoundSliderThumbShape(enabledThumbRadius: 13, elevation: 0),
+            ),
+            child: Slider(
+              value: thresholdValue,
+              onChanged: (value) {
+                setState(() {
+                  thresholdValue = value;
+                  setThresholdValue(value);
+                });
+              },
+              min: 0,
+              max: 100,
+              activeColor: Colors.green,
+            ),
           ),
-          child: Slider(
-            value: thresholdValue,
-            onChanged: (value) {
-              setState(() {
-                thresholdValue = value;
-                setThresholdValue(value);
-              });
-            },
-            min: 0,
-            max: 100,
-            activeColor: Colors.green,
-          ),
-        )),
+        ),
         ClipRRect(
           borderRadius: BorderRadius.circular(56),
           child: SizedBox(
@@ -146,7 +147,7 @@ class MoisterGraphContainer extends StatelessWidget {
       child: Container(
         height: 150,
         width: double.infinity,
-        color: Colors.green.shade100,
+        color: Palette.greenColorLight,
         child: const Column(
           children: [
             Align(
@@ -160,8 +161,8 @@ class MoisterGraphContainer extends StatelessWidget {
               ),
             ),
             LineCharWidget(
-              lineColor: Colors.green,
-              shadeColor: Colors.green,
+              lineColor: Palette.greenColor,
+              shadeColor: Palette.greenColorOverlay,
               values: [
                 FlSpot(0, 0),
                 FlSpot(10, 40),
@@ -188,13 +189,13 @@ class TemperatureContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 150,
-      color: Colors.amber.shade100,
-      child: Center(
-        child: ClipRRect(
-          borderRadius: BorderRadius.circular(24),
-          child: const Column(
+    return ClipRRect(
+      borderRadius: BorderRadius.circular(24),
+      child: Container(
+        height: 150,
+        color: Palette.orangeColorLight,
+        child: const Center(
+          child: Column(
             children: [
               Align(
                 alignment: Alignment.topLeft,
@@ -276,66 +277,6 @@ class HumidityContainer extends StatelessWidget {
           ),
         ),
       ),
-    );
-  }
-}
-
-class AppNavigationBar extends StatelessWidget {
-  const AppNavigationBar({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return ClipRRect(
-      borderRadius: BorderRadius.circular(100),
-      child: Container(
-        color: Colors.green,
-        child: const Padding(
-          padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
-          child: GNav(
-            gap: 8,
-            backgroundColor: Colors.green,
-            color: Colors.white,
-            activeColor: Colors.green,
-            tabBackgroundColor: Colors.white,
-            padding: EdgeInsets.all(16),
-            tabs: [
-              GButton(icon: Icons.home, text: "Home"),
-              GButton(icon: Icons.newspaper, text: "Feed"),
-              GButton(icon: Icons.settings, text: "Settings"),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-}
-
-class DesktopNavigationRail extends StatelessWidget {
-  const DesktopNavigationRail({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return NavigationRail(
-      extended: !(MediaQuery.of(context).size.width < 900),
-      destinations: const [
-        NavigationRailDestination(icon: Icon(Icons.home), label: Text("Home")),
-        NavigationRailDestination(
-            icon: Icon(Icons.newspaper), label: Text("NewsFeed")),
-        NavigationRailDestination(
-            icon: Icon(Icons.settings), label: Text("Setting"))
-      ],
-      selectedIndex: 0,
-    );
-  }
-}
-
-class UIConstants {
-  static AppBar appBar() {
-    return AppBar(
-      title: const Text("Plant Monitoring"),
-      centerTitle: true,
-      backgroundColor: Colors.green,
-      elevation: 0,
     );
   }
 }
