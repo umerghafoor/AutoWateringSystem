@@ -53,6 +53,7 @@ class PlantContainer extends StatelessWidget {
                             lineWidth: 8,
                             percent: 0.14,
                             animation: true,
+                            animationDuration: 1000,
                             progressColor: Palette.greenColor,
                             backgroundColor: Palette.greenColorLight,
                             circularStrokeCap: CircularStrokeCap.round,
@@ -138,7 +139,7 @@ class SearchBox extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: 64,
       width: double.infinity,
       child: Card(

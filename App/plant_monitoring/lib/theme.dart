@@ -12,6 +12,16 @@ class Palette {
   static const Color greenColorUltraLight = Color(0xFFCBECCD);
   static const Color greenColorOverlay = Color(0x4D32CC32);
 
+  static const Color yellowColor = Color(0xFFF5D401);
+  static const Color yellowColorDark = Color(0xFFEAC428);
+  static const Color yellowColorLight = Color(0xFFF4EA76);
+  static const Color yellowColorUltraLight = Color(0xFFFAF7C4);
+
+  static const Color blueColor = Color(0xFF2195F2);
+  static const Color blueColorDark = Color(0xFF066ABD);
+  static const Color blueColorLight = Color(0xFF83C0F3);
+  static const Color blueColorUltraLight = Color(0xFFBFDFFA);
+
   static const Color orangeColor = Color(0xFF32CD32);
   static const Color orangeColorDark = Color(0xFF807A00);
   static const Color orangeColorLight = Color(0xFFDAD44C);

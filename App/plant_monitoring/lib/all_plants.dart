@@ -87,45 +87,6 @@ class MobileViewAllPlants extends StatelessWidget {
                         textAlign: TextAlign.left,
                       ),
                     ),
-                    CarouselSlider(
-                      items: const [
-                        PlantContainer(),
-                        PlantContainer(),
-                        PlantContainer(),
-                      ],
-                      options: CarouselOptions(
-                        autoPlay: false,
-                        aspectRatio: 10 / 5,
-                        enlargeCenterPage: true,
-                        viewportFraction: 0.71,
-                      ),
-                    ),
-                    CarouselSlider(
-                      items: const [
-                        PlantContainer(),
-                        PlantContainer(),
-                        PlantContainer(),
-                      ],
-                      options: CarouselOptions(
-                        autoPlay: false,
-                        aspectRatio: 10 / 5,
-                        enlargeCenterPage: true,
-                        viewportFraction: 0.71,
-                      ),
-                    ),
-                    CarouselSlider(
-                      items: const [
-                        PlantContainer(),
-                        PlantContainer(),
-                        PlantContainer(),
-                      ],
-                      options: CarouselOptions(
-                        autoPlay: false,
-                        aspectRatio: 10 / 5,
-                        enlargeCenterPage: true,
-                        viewportFraction: 0.71,
-                      ),
-                    ),
                   ],
                 ),
               ),
@@ -143,7 +104,6 @@ class MobileViewAllPlants extends StatelessWidget {
           size: 32,
         ),
       ),
-      bottomNavigationBar: const AppNavigationBar(),
     );
   }
 }
