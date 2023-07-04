@@ -42,41 +42,44 @@ class PlantContainer extends StatelessWidget {
                   const SizedBox(height: 24),
                   SizedBox(
                     width: 190,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.symmetric(
-                              vertical: 0, horizontal: 16),
-                          child: CircularPercentIndicator(
-                            radius: 28,
-                            lineWidth: 8,
-                            percent: 0.14,
-                            animation: true,
-                            animationDuration: 1000,
-                            progressColor: Palette.greenColor,
-                            backgroundColor: Palette.greenColorLight,
-                            circularStrokeCap: CircularStrokeCap.round,
-                            center: const Icon(Icons.air,
-                                color: Palette.greenColor),
+                    child: SingleChildScrollView(
+                      scrollDirection: Axis.horizontal,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.symmetric(
+                                vertical: 0, horizontal: 16),
+                            child: CircularPercentIndicator(
+                              radius: 28,
+                              lineWidth: 8,
+                              percent: 0.14,
+                              animation: true,
+                              animationDuration: 1000,
+                              progressColor: Palette.greenColor,
+                              backgroundColor: Palette.greenColorLight,
+                              circularStrokeCap: CircularStrokeCap.round,
+                              center: const Icon(Icons.air,
+                                  color: Palette.greenColor),
+                            ),
                           ),
-                        ),
-                        const Padding(
-                            padding: EdgeInsets.symmetric(
-                                vertical: 0, horizontal: 8),
-                            child: Column(
-                              children: [
-                                Text(
-                                  "26.5\u00B0C",
-                                  style: TextStyle(fontSize: 32),
-                                ),
-                                Text(
-                                  "Temperature",
-                                  style: TextStyle(fontSize: 16),
-                                ),
-                              ],
-                            )),
-                      ],
+                          const Padding(
+                              padding: EdgeInsets.symmetric(
+                                  vertical: 0, horizontal: 8),
+                              child: Column(
+                                children: [
+                                  Text(
+                                    "26.5\u00B0C",
+                                    style: TextStyle(fontSize: 32),
+                                  ),
+                                  Text(
+                                    "Temperature",
+                                    style: TextStyle(fontSize: 16),
+                                  ),
+                                ],
+                              )),
+                        ],
+                      ),
                     ),
                   )
                 ],

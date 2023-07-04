@@ -367,9 +367,11 @@ class LineCharWidget extends StatelessWidget {
             maxY: 100,
             minX: 0,
             minY: 0,
-            lineTouchData: const LineTouchData(
-                touchTooltipData: LineTouchTooltipData(
-                    tooltipBgColor: Palette.greenColorUltraLight)),
+            lineTouchData: LineTouchData(
+              touchTooltipData: LineTouchTooltipData(
+                tooltipBgColor: shadeColor,
+              ),
+            ),
             borderData: FlBorderData(show: false, border: null),
             gridData: FlGridData(
               show: true,

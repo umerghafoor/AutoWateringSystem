@@ -45,6 +45,7 @@ dev_dependencies:
   percent_indicator: ^4.2.3
   flutter_svg: ^2.0.7
   carousel_slider: ^4.2.1
+  flutter_bluetooth_serial: ^0.4.0
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is

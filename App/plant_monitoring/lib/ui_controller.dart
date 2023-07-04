@@ -11,7 +11,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     if (MediaQuery.of(context).size.width < 700) {
-      return const MobileView();
+      return MobileView();
     } else if (MediaQuery.of(context).size.width < 1000) {
       return const DesktopViewHome();
     } else {
